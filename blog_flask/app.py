@@ -15,7 +15,7 @@ def CreateAccount_db(username , password , birth):
 		temp = data["account"]     # temp is the obj ( array ) ,  
 		n = {"username":username , "password":password , "birth" : birth , "post":[]}
 		temp.append(n)
-	write_json(data)
+	write_json(data) 
 
 def IfAccountNotExist(AccountName):
 	with open("main.json") as json_file:
