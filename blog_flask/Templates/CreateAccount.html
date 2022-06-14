@@ -1,45 +1,99 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title> login page </title>
-        <style>
-            body {
-                background-image: url('static/icon/mainpage.jpg');
-            }
-            div.in_center{
-                position: absolute;
-                text-align-last: justify;
-                text-align: justify;
-                top:40%;
-                left: 50%;
-                transform: translateX(-50%);
-                color: #f1f1f1;
-            }
-            p{
-                
-                text-align: center;
-                color: white;
-                
-            }
-        </style>
-    </head>
-    <body>
-        {% block content %}
-        <div class="in_center">
-            <form action="#" method="post" >
-                <p>Name: <input type = "text" name = "nm" /></p>
-                <p>Password: <input type = "text" name = "pd" /></p>
-                <p>DoubleCheck: <input type = "text" name = "pd1" /></p>
-                <p>YourBirth: <input type= "text" name = "birth" /></p>
-                <p><input type = "submit" name = "submit" /></p>
-            </form>
-        </div>
-        {% endblock %}
-        <p >birth example : 19990101 it means 1999/01/01</p>
-        <p >password need to input at least 8 characters </p>
-    </body>
 
+<head>
+    <meta charset="UTF-8">
+    <title> register page </title>
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-style: sans-serif;
+        }
 
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            background-color: #4A374A;
+        }
 
+        #register {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -150px 0 0 -150px;
+            width: 300px;
+            height: 300px;
+        }
 
+        h1 {
+            color: #fff;
+            text-shadow: 0 0 10px;
+            letter-spacing: 1px;
+            text-align: center;
+            font-size: 2em;
+            margin: 0.67em 0;
+        }
+
+        input {
+            width: 278px;
+            height: 18px;
+            margin-bottom: 10px;
+            outline: none;
+            padding: 10px;
+            font-size: 13px;
+            color: #fff;
+            text-shadow: 1px 1px 1px;
+            border-top: 1px solid #312E3D;
+            border-left: 1px solid #312E3D;
+            border-right: 1px solid #312E3D;
+            border-bottom: 1px solid #56536A;
+            border-radius: 4px;
+            background-color: #2D2D3F;
+        }
+
+        .but {
+            width: 300px;
+            min-height: 20px;
+            display: block;
+            background-color: #4a77d4;
+            border: 1px solid #3762bc;
+            color: #fff;
+            padding: 9px 14px;
+            font-size: 15px;
+            line-height: normal;
+            border-radius: 5px;
+            margin: 0;
+        }
+
+        p {
+
+            text-align: center;
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    {% block content %}
+    <div id="register">
+        <h1>REGISTER</h1>
+        <form action="#" method="post">
+            <input type="text" required="required" placeholder="用户名" name="nm"></input>
+            <input type="password" required="required" placeholder="密码" name="pd"></input>
+            <input type="password" required="required" placeholder="重复密码" name="pd1"></input>
+            <input type="text" required="required" placeholder="生日" name="birth"></input>
+            <button class="but" type="submit">登录</button>
+
+        </form>
+    </div>
+    <p>birth example : 19990101 it means 1999/01/01</p>
+    <p>password need to input at least 8 characters </p>
+    {% endblock %}
+</body>
+
+</html>

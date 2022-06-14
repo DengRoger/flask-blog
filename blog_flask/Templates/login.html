@@ -1,33 +1,87 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title> login page </title>
-        <style>
-            body {
-                background-image: url('static/icon/mainpage.jpg');
-            }
-            div.in_center{
-                position: absolute;
-                top:40%;
-                left: 50%;
-                transform: translateX(-50%);
-                color: #f1f1f1;
-            }
-        </style>
-    </head>
-    <body>
-        {% block content %}
-        <div class="in_center">
-            <form action="#" method="post" >
-                <p>Name &nbsp;&nbsp;&nbsp; &nbsp; : <input type = "text" name = "nm" /></p>
-                <p>Password : <input type = "text" name = "pd" /></p>
-                <p><input type = "submit" name = "submit" /></p>
-            </form>
-        </div>
-        {% endblock %}
-    </body>
 
+<head>
+    <meta charset="UTF-8">
+    <title> login page </title>
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-style: sans-serif;
+        }
 
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            background-color: #4A374A;
+        }
 
+        #login {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -150px 0 0 -150px;
+            width: 300px;
+            height: 300px;
+        }
 
+        h1 {
+            color: #fff;
+            text-shadow: 0 0 10px;
+            letter-spacing: 1px;
+            text-align: center;
+            font-size: 2em;
+            margin: 0.67em 0;
+        }
+
+        input {
+            width: 278px;
+            height: 18px;
+            margin-bottom: 10px;
+            outline: none;
+            padding: 10px;
+            font-size: 13px;
+            color: #fff;
+            text-shadow: 1px 1px 1px;
+            border-top: 1px solid #312E3D;
+            border-left: 1px solid #312E3D;
+            border-right: 1px solid #312E3D;
+            border-bottom: 1px solid #56536A;
+            border-radius: 4px;
+            background-color: #2D2D3F;
+        }
+
+        .but {
+            width: 300px;
+            min-height: 20px;
+            display: block;
+            background-color: #4a77d4;
+            border: 1px solid #3762bc;
+            color: #fff;
+            padding: 9px 14px;
+            font-size: 15px;
+            line-height: normal;
+            border-radius: 5px;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    {% block content %}
+    <div id="login">
+        <h1>Login</h1>
+        <form method="post">
+            <input type="text" required="required" placeholder="用户名" name="nm"></input>
+            <input type="password" required="required" placeholder="密码" name="pd"></input>
+            <button class="but" type="submit">登录</button>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+
+</html>
