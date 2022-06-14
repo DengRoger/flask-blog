@@ -71,16 +71,12 @@ def Login():
 	if request.method == "POST":
 		if CheckAccount(request.form['nm'],request.form['pd']):
 			now = GetPersonalInfomation(request.form['nm'])
-			#return f"<h1> hello " + str(request.form['nm']) + " ! \n your birthday is " + str(now) +"</h1> " 
 			return render_template('content.html') 
+			# make a fuction to read db and change the url to BlogFlask/usr/<usr>/mainpage 
 		else:
 			return f"<h1> username or password was wrong , check it again" 
 	else:
 		return render_template('login.html')
-		#if request.form["nm"] in database and database[request.form["nm"]] == request.form["pd"]: # see if username and password wright
-		#	return mainpage #after login , see the personal page 
-		#else :
-		#	return f"<h1>your password or username was wrong<h1>"
 
 @app.route("/CreateAccount",methods = ["POST","GET"])
 def CreateAccount():
@@ -88,6 +84,7 @@ def CreateAccount():
 		if request.form["pd"] == request.form["pd1"] and IsValidDate(request.form["birth"]) and IfAccountNotExist(request.form["nm"]):
 			CreateAccount_db(request.form["nm"] , request.form["pd"] , request.form["birth"])
 			return f"<h1> create account successful , you can login now!" 
+			# count down 3 sec and jump to login or main page 
 		else:
 			return f"<h1> this user name has been used !" 
 	else:
